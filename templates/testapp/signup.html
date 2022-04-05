@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "testapp/base.html"%}
+{% block content %}
+   <h1 class="text-center">signin form </h1>
+   <div class="container-fluid">
+     <div class="row">
+       <div class="col-md-4">
+
+       </div>
+       <div class="col-md-4">
+         <form  method="POST">
+           <table>
+
+
+           {{form.as_table}}
+           {% csrf_token %}
+           </table>
+           <input type="submit"  value="login" class="btn btn-info" style="margin-left:35%;" >
+
+         </form>
+       </div>
+
+     </div>
+
+
+
+   </div>
+
+{% endblock %}

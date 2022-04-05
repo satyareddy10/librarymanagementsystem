@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html'%}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4" >
+      <form method="POST" style="margin-top:30px;">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit"  value="submit" style="margin-left:35%;" class='btn btn-primary'><br><br>
+        <a href="{% url 'home' %}" class="btn btn-success" style="margin-left:25%;">goto home page</a>
+      </form>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+ {% endblock %}

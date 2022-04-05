@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% block content %}
+<h1>LIBRARY UPDATE FORM</h1><hr>
+<form  method="POST">
+  {% csrf_token %}
+  BOOKID:<input type="text" name="BID" value="{{data.bid}}" class="form-control">
+  BOOKNAME:<input type="text" name="BN" value="{{data.bname}}" class="form-control">
+  BOOKAUTHOR:<input type="text" name="BA" value="{{data.bauthor}}" class="form-control">
+  BOOKCOST:<input type="text" name="BC" value="{{data.bcost}}" class="form-control">
+  <input type="submit" class="btn btn-primary " value="update" >
+
+</form>
+{% endblock %}

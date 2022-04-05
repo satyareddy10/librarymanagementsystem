@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% block content%}
+    <h1><a href="{% url 'add' %}" class="btn btn-primary" >Add New Book</a></h1><br>
+<div class="container-fluid" style="width:100%;">
+
+
+    <h1 class="text-center bg-success text-white">LIBRARY MANAGEMENT SYSTEM</h1>
+    <table class="table table-bordered bg-dark text-white text-center " style="width:100%;">
+    <thead>
+      <tr>
+      <th>BOOKID</th>
+      <th>BOOKNAME</th>
+      <th>BOOKAUTHOR</th>
+      <th>BOOKCOST</th>
+      <th>ACTIONS</th>
+      </tr>
+    </thead>
+    {% for data in librarydata %}
+     <tr>
+       <td>{{data.bid}}</td>
+       <td>{{data.bname}}</td>
+       <td>{{data.bauthor}}</td>
+       <td>{{data.bcost}}</td>
+       <td>
+       <a href="{% url 'update' data.id %}" class="btn btn-success">Update</a>
+       <a href="{% url 'delete' data.id %}" class="btn btn-danger">Delete</a>
+     </td>
+
+     </tr>
+     {% endfor %}
+
+    </table>
+
+    {% endblock %}
+    </div>
